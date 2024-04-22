@@ -4,7 +4,7 @@ import axios from "axios";
 
 import headphone from "../../images/headphone.png";
 import rare from "../../images/rare.png";
-import { bluetoothGetStatusURL,  bluetoothPostStatusURL } from "../../url";
+import { bluetoothGetStatusURL, bluetoothPostStatusURL } from "../../url";
 
 const Bluetooth = () => {
   const navigate = useNavigate();
@@ -18,12 +18,14 @@ const Bluetooth = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(bluetoothGetStatusURL)
-      
-
-      const data=await response.json();
-      console.log(data);
-        setToggle(response.data.bluetoothBtn.btnStatus);
+        const response = await fetch(bluetoothGetStatusURL);
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        console.log(data);
+        setToggle(data.bluetoothBtn.btnStatus);
+        // setToggle(response.data.bluetoothBtn.btnStatus);
         if (response.data.bluetoothBtn.btnStatus) {
           document.getElementById("Devices").style.display = "block";
         } else {
