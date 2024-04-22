@@ -19,14 +19,10 @@ const Bluetooth = () => {
     const fetchData = async () => {
     
       try {
-        const response = await fetch(bluetoothGetStatus)
+        const response = await axios.get(bluetoothGetStatus)
           .then((e) => {
-            console.log(e.json().then((ee)=>{
-              console.log(ee);
-            }));
-          }).then((data)=>{
-            console.log(data);
-          })
+            console.log(e)})
+        
           .catch((err) => {
             console.log(err);
           });
