@@ -19,18 +19,10 @@ const Bluetooth = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(bluetoothGetStatusURL)
-          .then((e) =>{ console.log(e)
-          console.log(e.text().then((data)=>{
-            console.log(data.json());
-          }));
-   
-          }
-          )
+      
 
-          .catch((err) => {
-            console.log(err);
-          });
-        console.log(response);
+      const data=await response.json();
+      console.log(data);
         setToggle(response.data.bluetoothBtn.btnStatus);
         if (response.data.bluetoothBtn.btnStatus) {
           document.getElementById("Devices").style.display = "block";
