@@ -21,7 +21,7 @@ const Bluetooth = () => {
       try {
         const response = await fetch(bluetoothGetStatus)
           .then((e) => {
-            console.log(e);
+            console.log(e.json());
           }).then((data)=>{
             console.log(data);
           })
