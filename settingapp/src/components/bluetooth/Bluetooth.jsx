@@ -17,12 +17,14 @@ const Bluetooth = () => {
   const devices = ["samsung", "redmi", "vivo", "oppo", "gionee"];
   useEffect(() => {
     const fetchData = async () => {
+    
       try {
-        const response = await fetch(bluetoothGetStatus).then((e) =>
-          console.log(response)
-        );
-        // );
-        // console.log(response);
+        const response = await fetch(bluetoothGetStatus).then((e)=>{
+          console.log(e.json);
+        }).catch((err)=>{
+          console.log(err);
+        });
+console.log(response);
         setToggle(response.data.bluetoothBtn.btnStatus);
         if (response.data.bluetoothBtn.btnStatus) {
           document.getElementById("Devices").style.display = "block";
