@@ -24,7 +24,7 @@ const Bluetooth = () => {
             // Add other headers if necessary
           },
         })
-          .then((e) => console.log(e.data))
+          .then((e) => console.log(e))
 
           .catch((err) => {
             console.log(err);
