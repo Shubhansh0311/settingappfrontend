@@ -17,10 +17,13 @@ const Bluetooth = () => {
   const devices = ["samsung", "redmi", "vivo", "oppo", "gionee"];
   useEffect(() => {
     const fetchData = async () => {
+    
       try {
         const response = await fetch(bluetoothGetStatus)
           .then((e) => {
-            console.log(e);
+            console.log(e.json);
+          }).then((data)=>{
+            console.log(data);
           })
           .catch((err) => {
             console.log(err);
