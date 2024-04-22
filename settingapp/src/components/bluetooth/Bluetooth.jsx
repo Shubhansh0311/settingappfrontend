@@ -18,7 +18,7 @@ const Bluetooth = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://settingappbackend.vercel.app/bluetooth/status")
+        const response = await fetch(bluetoothGetStatusURL)
           .then((e) => {
             console.log(e);
 

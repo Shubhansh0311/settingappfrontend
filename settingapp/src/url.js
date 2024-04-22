@@ -5,5 +5,5 @@ const bluetoothGetStatusEndpoint = "/status";
 const bluetoothPostStatusEndpoint = "/bluetooth/toggle";
 
 // Construct full URLs using the base URL
-export const bluetoothGetStatusURL = `${baseURL}${bluetoothGetStatusEndpoint}`;
+export const bluetoothGetStatusURL = "https://settingappbackend.vercel.app/bluetooth/status";
 export const bluetoothPostStatusURL = `${baseURL}${bluetoothPostStatusEndpoint}`;
