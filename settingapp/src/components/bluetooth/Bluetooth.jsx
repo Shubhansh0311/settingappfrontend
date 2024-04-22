@@ -17,12 +17,11 @@ const Bluetooth = () => {
   const devices = ["samsung", "redmi", "vivo", "oppo", "gionee"];
   useEffect(() => {
     const fetchData = async () => {
-    
       try {
-        const response = await axios.get(bluetoothGetStatus)
-          .then((e) => 
-            console.log(e.data.json()))
-        
+        const response = await axios
+          .get(bluetoothGetStatus)
+          .then((e) => console.log(e.data))
+
           .catch((err) => {
             console.log(err);
           });
