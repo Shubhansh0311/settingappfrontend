@@ -18,7 +18,13 @@ const Bluetooth = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(bluetoothGetStatusURL)
+        const response = await fetch({
+          url: bluetoothGetStatusURL,
+          method: "GET",
+          headers: {
+            accept: "application/json",
+          },
+        })
           .then((e) => {
             console.log(e);
 
