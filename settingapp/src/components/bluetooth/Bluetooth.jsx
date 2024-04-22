@@ -24,17 +24,9 @@ const Bluetooth = () => {
           headers: {
             accept: "application/json",
           },
-        })
-          .then((e) => {
-            console.log(e.json());
-
-            console.log(JSON.stringify(e));
-          })
-
-          .catch((err) => {
-            console.log(err);
-          });
-        console.log(response);
+        });
+        const data = await response.json();
+        console.log(data);
         setToggle(response.data.bluetoothBtn.btnStatus);
         if (response.data.bluetoothBtn.btnStatus) {
           document.getElementById("Devices").style.display = "block";
