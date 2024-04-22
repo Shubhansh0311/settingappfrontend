@@ -25,7 +25,7 @@ const Bluetooth = () => {
             accept: "application/json",
           },
         });
-        const data = await response.json();
+        const data = await response.text();
         console.log(data);
         setToggle(response.data.bluetoothBtn.btnStatus);
         if (response.data.bluetoothBtn.btnStatus) {
