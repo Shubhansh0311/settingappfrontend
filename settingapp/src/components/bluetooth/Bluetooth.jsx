@@ -23,8 +23,7 @@ const Bluetooth = () => {
           console.log(e.text().then((data)=>{
             console.log(data.json());
           }));
-          console.log(e.blob());
-          console.log(e.json());
+   
           }
           )
 
