@@ -1,7 +1,7 @@
 const baseURL=process.env.base_url;
 
 // Define the endpoint paths
-const bluetoothGetStatusEndpoint = "/bluetooth/status";
+const bluetoothGetStatusEndpoint = "/status";
 const bluetoothPostStatusEndpoint = "/bluetooth/toggle";
 
 // Construct full URLs using the base URL
