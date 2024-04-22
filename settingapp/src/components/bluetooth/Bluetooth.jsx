@@ -18,8 +18,12 @@ const Bluetooth = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios
-          .get(bluetoothGetStatus)
+        const response = await fetch(bluetoothGetStatus, {
+          headers: {
+            Accept: "application/json",
+            // Add other headers if necessary
+          },
+        })
           .then((e) => console.log(e.data))
 
           .catch((err) => {
