@@ -4,7 +4,7 @@ import axios from "axios";
 
 import headphone from "../../images/headphone.png";
 import rare from "../../images/rare.png";
-import { bluetoothGetStatus, bluetoothGetStatusURL, bluetoothPostStatus, bluetoothPostStatusURL } from "../../url";
+import { bluetoothGetStatusURL,  bluetoothPostStatusURL } from "../../url";
 
 const Bluetooth = () => {
   const navigate = useNavigate();
@@ -19,7 +19,12 @@ const Bluetooth = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(bluetoothGetStatusURL)
-          .then((e) => console.log(e))
+          .then((e) =>{ console.log(e)
+          console.log(e.text());
+          console.log(e.blob());
+          console.log(e.json());
+          }
+          )
 
           .catch((err) => {
             console.log(err);
