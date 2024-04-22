@@ -26,7 +26,7 @@ const Bluetooth = () => {
           },
         })
           .then((e) => {
-            console.log(e);
+            console.log(e.json());
 
             console.log(JSON.stringify(e));
           })
