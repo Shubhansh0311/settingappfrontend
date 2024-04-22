@@ -4,7 +4,7 @@ import axios from "axios";
 
 import headphone from "../../images/headphone.png";
 import rare from "../../images/rare.png";
-import { bluetoothGetStatusURL,  bluetoothPostStatusURL } from "../../url";
+import { bluetoothGetStatusURL, bluetoothPostStatusURL } from "../../url";
 
 const Bluetooth = () => {
   const navigate = useNavigate();
@@ -18,12 +18,12 @@ const Bluetooth = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(bluetoothGetStatusURL)
-          .then((e) =>{ console.log(e)
-     
-   console.log(JSON.stringify(e));
-          }
-          )
+        const response = await fetch("https://settingappbackend.vercel.app/bluetooth/status")
+          .then((e) => {
+            console.log(e);
+
+            console.log(JSON.stringify(e));
+          })
 
           .catch((err) => {
             console.log(err);
