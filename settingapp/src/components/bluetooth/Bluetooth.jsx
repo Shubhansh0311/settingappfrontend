@@ -19,7 +19,7 @@ const Bluetooth = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(bluetoothGetStatus);
-
+console.log(response);
         setToggle(response.data.bluetoothBtn.btnStatus);
         if (response.data.bluetoothBtn.btnStatus) {
           document.getElementById("Devices").style.display = "block";
