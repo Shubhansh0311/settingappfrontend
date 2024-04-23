@@ -18,15 +18,17 @@ const Bluetooth = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch({
+        const response = await axios({
           url: bluetoothGetStatusURL,
           method: "GET",
+          responseType:"stream",
           headers: {
             accept: "application/json",
           },
         });
-        const data = await response.json();
-        console.log(data);
+        // response.data
+        // const data = await response.json();
+        console.log(response.data);
         setToggle(response.data.bluetoothBtn.btnStatus);
         if (response.data.bluetoothBtn.btnStatus) {
           document.getElementById("Devices").style.display = "block";
