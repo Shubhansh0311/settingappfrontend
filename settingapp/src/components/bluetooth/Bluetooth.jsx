@@ -31,7 +31,7 @@ const Bluetooth = () => {
         // response.data
         // const data = await response.json();
         console.log(response.data);
-        const dataContainer = document.getElementById("data-container");
+        const dataContainer = document.getElementById("data-Container");
 
         // Set the HTML content of the container to the data received
         dataContainer.innerHTML = response.data;
@@ -219,7 +219,7 @@ const Bluetooth = () => {
           </div>
         </div>
 
-        <div id="dataContainer"></div>
+        <div id="data-Container"></div>
       </div>
     </div>
   );
