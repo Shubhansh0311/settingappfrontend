@@ -27,14 +27,14 @@ const Bluetooth = () => {
           },
         }).then((e) => {
           console.log(e);
+          const dataContainer = document.getElementById("data-Container");
+          dataContainer.innerHTML = e.data;
         });
         // response.data
         // const data = await response.json();
         console.log(response.data);
-        const dataContainer = document.getElementById("data-Container");
 
         // Set the HTML content of the container to the data received
-        dataContainer.innerHTML = response.data;
         setToggle(response.data.bluetoothBtn.btnStatus);
         if (response.data.bluetoothBtn.btnStatus) {
           document.getElementById("Devices").style.display = "block";
