@@ -21,16 +21,20 @@ const Bluetooth = () => {
         const response = await axios({
           url: bluetoothGetStatusURL,
           method: "GET",
-          responseType:"stream",
+          responseType: "stream",
           headers: {
             accept: "application/json",
           },
-        }).then((e)=>{
+        }).then((e) => {
           console.log(e);
-        })
+        });
         // response.data
         // const data = await response.json();
         console.log(response.data);
+        const dataContainer = document.getElementById("data-container");
+
+        // Set the HTML content of the container to the data received
+        dataContainer.innerHTML = response.data;
         setToggle(response.data.bluetoothBtn.btnStatus);
         if (response.data.bluetoothBtn.btnStatus) {
           document.getElementById("Devices").style.display = "block";
@@ -214,6 +218,8 @@ const Bluetooth = () => {
             </span>
           </div>
         </div>
+
+        <div id="dataContainer"></div>
       </div>
     </div>
   );
