@@ -25,7 +25,9 @@ const Bluetooth = () => {
           headers: {
             accept: "application/json",
           },
-        });
+        }).then((e)=>{
+          console.log(e);
+        })
         // response.data
         // const data = await response.json();
         console.log(response.data);
