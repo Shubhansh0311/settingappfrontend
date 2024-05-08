@@ -21,9 +21,11 @@ const Bluetooth = () => {
         const response = await axios({
           url: bluetoothGetStatusURL,
           method: "GET",
-          responseType: "stream",
+          // responseType: "stream",
+
           headers: {
             accept: "application/json",
+            "Content-Type": "application/json",
           },
         }).then((e) => {
           console.log(e);
