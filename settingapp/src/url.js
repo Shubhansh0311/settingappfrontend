@@ -1,4 +1,7 @@
-const baseURL=process.env.base_url;
+
+import dotenv from "dotenv"
+dotenv.config();
+const baseURL=process.env.baseURL
 
 // Define the endpoint paths
 const bluetoothGetStatusEndpoint = "/bluetooth/status";
